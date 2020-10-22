@@ -7,6 +7,15 @@ output:
 
 # Does the energy saving light bulb really last 10,000 hours?
 
+When we moved into our new house 10 years ago we noticed that the light bulbs were all of the Fluorescent type instead of the tradicional incandescent technology that had been predominant until then.
+Furthermore soon after that the even newer LED lights quickly took over the regular fluorescent technology with no harmful chemicals making it irresistible to switch over to it to reap the savings per unit of total visible light produced while saving the environment.
+
+Our new home has over 50 light bulbs of this kind. Everything was fine until one day I relaized that I was buying a new box of these light bulbs almost every year (4 units to a box). So I decided to start labeling every new replacement unit with the date it was installed. I wanted to see the average duration of the units under real use conditions.
+
+Yesterday I got the first data point when I replaced a failing light bulb in the basement of our house. This space has partial natural light and it had not been used during the day, until the work from home need arose recently. One of our family members moved her home office four months ago to the basement. The first floor had become too noisy and the summer school holidays gave way to other family members roaming around the house during work hours. The basement became a quieter work space then and the lights were on during the day all the time.
+
+Back to the light bulb case. These new technology promises savings via a reduced power consumption delivered over a given number of service hours. This benefit offsets the increased cost of the technology. Therefore it is paramount that the service hours be fulfilled in order to offset the extra cost.
+
 ```{r box image, echo=FALSE, fig.cap="10,000 hour claim on the original package", out.width='50%'}
 knitr::include_graphics("/home/pablo/Documents/Code/R/DatesTime_playground/images/10000Claim.jpeg")
 ```
@@ -18,14 +27,14 @@ duration <- diff.Date(x = c(date_installed, date_failed))
 print(paste0("Time installed: ", duration, " days.") )
 ```
 
-The first light bulb with an installed date failed today, `r format(date_failed, "%B-%d-%Y")`. It was a Phillips Mini-Twister model, containing mercury. It was installed on `r format(date_installed, "%B-%d-%Y")`.  
+The first light bulb with an installation date failed on `r format(date_failed, "%B-%d-%Y")`. It was a Phillips Mini-Twister model, containing mercury, producing 1,600 Lumens with a consumption of 23 Watts  and an expected service life of about 9 years if used between 3 and  4 hours a day, according to the printing on the package. It was installed on `r format(date_installed, "%B-%d-%Y")` according to the label inscribed on the unit itself with a Sharpie pen.  
 
 ```{r first light bulb, echo=FALSE, fig.cap="First light bulb that needed replacement with an installation date", out.width='20%'}
 knitr::include_graphics("/home/pablo/Documents/Code/R/DatesTime_playground/images/LightBulb.jpeg")
 ```
 
-The installed time is `r duration` days.
-Let's turn this into an estimate of hours of use and compare it to the expected number of hours of service accouding to the manufacturer.
+The _installed time_ is `r duration` days, now the question is what was the most likely service time measured as hours of service per day.
+One can convert the _installed time_ into an estimate of hours of actual service by assuming different average hours of service per day: hours the light bulb was on during a 24 hour period. This gives the black line on the accompanying plot.
 
 The question we are trying to answer is how many hours per day would this light bulb have to have been in service to meet the 10,000 hour specification. Let's try to answer it with a plot.
 
@@ -65,6 +74,11 @@ ggplot(data, aes(x = x, y = y)) +
   #           label = hot_point)
 ```
 
-The straight  line was created using the observed duration multiplied by the _x_ axis, hours/day. Clearly the manufacturer's stated durability of  10,000 hours of service at 3 to 4 hours per day did not apply in this case. 
+Again, the straight line was created using the observed duration `r duration` days, multiplied by the _x_ axis in hours/day. Clearly the manufacturer's stated durability of  10,000 hours of service at 3 to 4 hours per day did not apply in this case. 
 
-The plot indicates that for this light bulb to have been in service that many hours it would have had to be in service about 11 hours/day. That is far from being the use pattern we have given this light bulb. We estimate that the light bulb had some 2,500 hours of service at most in the 906 days it was installed, and that accounts for the effect of family members starting to work from home after the COVID-19 pandemic. That increased the use from 3h/day to about 10h/day only in the last 4 months since an office was moved to the basement.
+The plot indicates that for this light bulb to have been in service that many hours it would have had to be in service about 11 hours/day. That is far from being the use pattern we have given this light bulb. The basement is used only at night and the lights had been off during the day uo until 4 months ago.
+
+So 4 months at 11 hours a day for  5 days of the work week gives 880 hours. If the remaining 826 days were accounted for at 4 hours/day of service  that would be 3,304 hours. The total estimated number of hours of service is 4,184 hours. So in order to reach the 10,000 hour mark we would have had to use the basement a little over twice as long per day every day as we reasonably think we did. Hard to believe but possible.
+
+Clearly there is need to gather more data points to be able to conclude anything.
+So I will be updating this blog posting with more data as it becomes available.
