@@ -56,7 +56,10 @@ ggplot(data, aes(x = x, y = y)) +
                linejoin = "round",
                size = 0.75,
                arrow = arrow(length = unit(0.3, "cm")),
-               colour = "#EC7014") 
+               colour = "#EC7014") +
+  labs(title="Estimated average use necessary to have the claimed service time for a\nlight bulb that failed after 906 days of the installation date.",
+       x="Estimated average use, hours/day",
+       y="Total service, hours")
 # geom_text(x = hot_point + 0.5, 
   #           y = 0,
   #           label = hot_point)
