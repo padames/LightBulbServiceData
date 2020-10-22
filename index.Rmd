@@ -61,6 +61,7 @@ ggplot(data, aes(x = x, y = y)) +
   #           y = 0,
   #           label = hot_point)
 ```
+
 The straight  line was created using the observed duration multiplied by the _x_ axis, hours/day. Clearly the manufacturer's stated durability of  10,000 hours of service at 3 to 4 hours per day did not apply in this case. 
 
 The plot indicates that for this light bulb to have been in service that many hours it would have had to be in service about 11 hours/day. That is far from being the use pattern we have given this light bulb. We estimate that the light bulb had some 2,500 hours of service at most in the 906 days it was installed, and that accounts for the effect of family members starting to work from home after the COVID-19 pandemic. That increased the use from 3h/day to about 10h/day only in the last 4 months since an office was moved to the basement.
