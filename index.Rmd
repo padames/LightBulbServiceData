@@ -14,7 +14,7 @@ Our new home has over 50 light bulbs of this kind. Everything was fine until one
 
 Yesterday I got the first data point when I replaced a failing light bulb in the basement of our house. This space has partial natural light and it had not been used during the day, until the work from home need arose recently. One of our family members moved her home office four months ago to the basement. The first floor had become too noisy and the summer school holidays gave way to other family members roaming around the house during work hours. The basement became a quieter work space then and the lights were on during the day all the time.
 
-Back to the light bulb case. These new technology promises savings via a reduced power consumption delivered over a given number of service hours. This benefit offsets the increased cost of the technology. Therefore it is paramount that the service hours be fulfilled in order to offset the extra cost.
+Back to the light bulb case. This new technology promises savings via a reduced power consumption delivered over a given number of service hours. The benefit offsets the increased cost of the technology, therefore it is paramount that the service hours be fulfilled in order to offset the extra cost.
 
 ```{r box image, echo=FALSE, fig.cap="10,000 hour claim on the original package", out.width='50%'}
 knitr::include_graphics("/home/pablo/Documents/Code/R/DatesTime_playground/images/10000Claim.jpeg")
