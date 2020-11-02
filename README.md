@@ -1,3 +1,3 @@
 # LightBulbServiceData
 
-To read the page please visit ![LightBulbServiceData](https://padames.github.io/LightBulbServiceData/)
+To read the page please visit https://padames.github.io/LightBulbServiceData/
